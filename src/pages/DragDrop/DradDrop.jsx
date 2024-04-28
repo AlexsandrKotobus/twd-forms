@@ -3,9 +3,10 @@
 import React, {useState} from 'react';
 
 const DradDrop = () => {
+    // сотояние для хранения списка файлов
     const [files, setFiles] = useState([]);
     const [dragActive, setDragActive] = useState(false);
-
+// функция с событием e
 const handleChange = (e) => {
     e.preventDefault();
     if(e.target.files && e.target.files[0]){
@@ -43,11 +44,7 @@ const handleSubmit = (e)=>{
     .then((response)=> response.json())
     .then(() => setFiles([]))
     .catch(() => setFiles([]));
-    
-
 }
-
-
     return (
         <div className='wrapper'>
             <h1>Drag & Drop</h1>
@@ -58,7 +55,6 @@ const handleSubmit = (e)=>{
             onDrop ={handleDrop}
             onReset={handleReset}
             onSubmit={handleSubmit}
-            
             >
                 <h2>Перетащите файлы сюда</h2>
                 <p>или</p>
