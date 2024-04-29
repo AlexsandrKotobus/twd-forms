@@ -1,17 +1,33 @@
 import './App.css';
 // import DradDrop from './pages/DragDrop/DradDrop';
 import CustomForm from './components/Form/Form'
+// РОУТИНГ
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 
-function App() {
-  return (
-    <div className="App">
+
+//  !!! обычный
+// function App() {
+//   return (
+//     <div className="App">
       
-       {/* <DradDrop/> */}
-       <CustomForm/>
+//        {/* <DradDrop/> */}
+//        <CustomForm/>
      
-    </div>
-  );
+//     </div>
+//   );
+// }
+
+
+// РОУТИНГ
+function App(){
+  return(
+    <>
+      <RouterProvider router={router}/>
+    </>
+  )
 }
+
 
 export default App;
